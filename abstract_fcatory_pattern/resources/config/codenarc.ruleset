@@ -1,0 +1,39 @@
+ruleset {
+    description 'Custom CodeNarc Rules for Jenkins Shared Library'
+ 
+    // Enforce 4 spaces indentation
+    Indentation {
+        spacesPerIndentLevel = 4
+    }
+ 
+    // Maximum line length 120 chars
+    LineLength {
+        maxLineLength = 120
+    }
+ 
+    // Naming conventions
+    MethodName {
+        regex = /^[a-z][a-zA-Z0-9]*$/
+    }
+ 
+    // Cyclomatic complexity limit
+    CyclomaticComplexity {
+        maxMethodComplexity = 10
+    }
+ 
+    // Avoid empty catch blocks; require proper handling
+    EmptyCatchBlock {
+        enabled = true
+    }
+ 
+    // Disallow usage of 'def' for variable declarations
+    NoDef {
+        enabled = true
+        ignoreClosureParameters = false
+    }
+ 
+    // Detect unused imports
+    UnusedImport {
+        enabled = true
+    }
+}
